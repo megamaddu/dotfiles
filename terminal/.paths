@@ -1,0 +1,8 @@
+PATH="/usr/local/opt/curl/bin:$PATH"
+PATH="/usr/local/opt/gettext/bin:$PATH"
+PATH="/usr/local/opt/srm/bin:$PATH"
+PATH="$PATH:`yarn global bin`"
+PATH=$HOME/.local/bin:$PATH
+PATH=./node_modules/.bin:$PATH
+
+# vi:ft=sh

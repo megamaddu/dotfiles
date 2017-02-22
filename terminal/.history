@@ -1,0 +1,7 @@
+HISTCONTROL=ignoreboth:erasedups   # no duplicate entries
+PROMPT_COMMAND="history -a"        # update histfile after every command
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.histfile
+
+# vi:ft=sh

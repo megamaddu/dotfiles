@@ -1,0 +1,44 @@
+[user]
+  name = Michael Trotter
+  email = spicydonuts@gmail.com
+	signingkey = 6E5B4DE6AFA83D9B
+[color]
+  ui = true
+[merge]
+	ff = only
+  tool = vimdiff
+[push]
+	default = simple
+[core]
+	autocrlf = input
+  editor = /usr/local/bin/vim
+[alias]
+  pushf = push --force-with-lease
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  dhist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --left-right --cherry-pick --oneline
+  zlog = log --topo-order --graph --decorate
+  slog = log --topo-order --graph --decorate --first-parent
+  flog = log --follow --find-copies-harder
+  type = cat-file -t
+  dump = cat-file -p
+  standup = !"git log --reverse --branches --since=$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
+[branch]
+  autosetuprebase = always
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[mergetool]
+  trustExitCode = true
+  prompt = false
+	keepBackup = false
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[commit]
+	# gpgsign = true

@@ -1,0 +1,9 @@
+EDITOR=vim
+PAGER=less
+
+source $DIR/.history
+source $DIR/.paths
+source $DIR/.prompt
+source $DIR/.aliases
+
+# vi:ft=sh

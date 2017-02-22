@@ -1,0 +1,7 @@
+if [ -f /usr/local/share/liquidprompt ]; then
+  . /usr/local/share/liquidprompt
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# vi:ft=sh
