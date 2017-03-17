@@ -6,6 +6,8 @@ compinit
 setopt notify
 unsetopt beep
 
+bindkey "^[[3~" delete-char
+
 DIR=$HOME/.dotfiles/terminal
 source $DIR/.base
 
