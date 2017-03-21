@@ -35,9 +35,4 @@ alias dotgitconfig="vim ~/.dotfiles/.gitconfig"
 alias dotawsconfig="vim ~/.dotfiles/.aws/config"
 alias dotawscred="vim ~/.dotfiles/.aws/credentials"
 
-alias jane="cd ~/dev/jane && clear"
-alias jane-com="cd ~/dev/jane/jane-com && clear"
-alias jane-node="cd ~/dev/jane/jane-node && clear"
-alias boomr-web="cd ~/dev/boomr/boomr-web && clear"
-
 # vi:ft=sh
