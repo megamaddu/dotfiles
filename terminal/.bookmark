@@ -1,0 +1,19 @@
+mkdir -p $HOME/.bookmarks
+
+# goes to bookmark. usage example: `g s`
+b() {
+  cd `cat $HOME/.bookmarks/${1-_back} || echo .`
+}
+
+# lists all bookmarks
+bl() {
+  ( cd $HOME/.bookmarks ; grep '' * ) | awk 'BEGIN { FS=":" } { printf("%-10s %s\n",$1,$2) }' | grep -i -E ${1-.\*}
+}
+
+# sets bookmark. usage example: `cd ~/jane/jane-seller && gt s`
+bs() {
+  pwd > $HOME/.bookmarks/${1-_back}
+  echo "g ${1} will return to `pwd`"
+}
+
+# vi:ft=sh

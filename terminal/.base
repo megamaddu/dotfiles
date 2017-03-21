@@ -5,5 +5,6 @@ source $DIR/.history
 source $DIR/.paths
 source $DIR/.prompt
 source $DIR/.aliases
+source $DIR/.bookmark
 
 # vi:ft=sh
