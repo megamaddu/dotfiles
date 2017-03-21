@@ -13,7 +13,7 @@ brew install editorconfig
 brew install node
 brew install yarn
 brew install openssl
-brew install srm
+brew install homebrew/dupes/srm
 brew install haskell-stack
 brew install the_silver_searcher
 brew install fzf
