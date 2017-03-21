@@ -4,6 +4,7 @@
 
 brew install bash
 brew install bash-completion
+brew install zsh
 brew install curl --with-c-ares --with-libssh2 --with-nghttp2 --with-rtmpdump
 brew install git --with-blk-sha1 --with-brewed-curl --with-brewed-openssl --with-gettext --with-pcre --with-persistent-https
 brew install hub
@@ -31,6 +32,7 @@ brew cask install visual-studio-code
 brew cask install flux
 brew cask install spectacle
 brew cask install zeplin
+brew cask install firefox
 brew cask install google-chrome-dev
 brew cask install spotify
 brew cask install parallels-desktop
