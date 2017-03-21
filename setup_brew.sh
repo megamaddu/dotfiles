@@ -33,7 +33,7 @@ brew cask install flux
 brew cask install spectacle
 brew cask install zeplin
 brew cask install firefox
-brew cask install google-chrome-dev
+brew cask install google-chrome
 brew cask install spotify
 brew cask install parallels-desktop
 brew cask install sketch
