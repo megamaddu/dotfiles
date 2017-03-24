@@ -5,6 +5,7 @@
 brew install bash
 brew install bash-completion
 brew install zsh
+brew install zsh-completions
 brew install curl --with-c-ares --with-libssh2 --with-nghttp2 --with-rtmpdump
 brew install git --with-blk-sha1 --with-brewed-curl --with-brewed-openssl --with-gettext --with-pcre --with-persistent-https
 brew install hub

@@ -8,6 +8,8 @@ unsetopt beep
 
 bindkey "^[[3~" delete-char
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 DIR=$HOME/.dotfiles/terminal
 source $DIR/.base
 
