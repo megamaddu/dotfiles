@@ -13,7 +13,7 @@ bl() {
 # sets bookmark. usage example: `cd ~/jane/jane-seller && gt s`
 bs() {
   pwd > $HOME/.bookmarks/${1-_back}
-  echo "g ${1} will return to `pwd`"
+  echo "b ${1} will jump to `pwd`"
 }
 
 # vi:ft=sh
