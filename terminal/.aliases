@@ -6,6 +6,7 @@ alias freshbrew="brew update; brew upgrade; brew cleanup; brew prune;"
 alias dup="docker-compose up"
 
 alias git=hub
+alias g=git
 alias gpl="git pull --prune --tags"
 alias gph="git push --follow-tags"
 alias gphf="git push --follow-tags --force-with-lease"

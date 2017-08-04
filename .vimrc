@@ -39,7 +39,7 @@ Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}
 
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
-" Plug 'facebook/vim-flow', {'for': 'javascript'}
+Plug 'flowtype/vim-flow', {'for': 'javascript'}
 
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
