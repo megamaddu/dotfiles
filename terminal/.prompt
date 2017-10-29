@@ -6,4 +6,7 @@ if [ -f ~/.fzf.bash ]; then
   source ~/.fzf.bash
 fi
 
+bindkey '^[[1;9D' backward-word
+bindkey '^[[1;9C' forward-word
+
 # vi:ft=sh

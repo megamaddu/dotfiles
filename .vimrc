@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'zacanger/angr.vim'
 Plug 'hickop/vim-hickop-colors'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -9,12 +10,25 @@ Plug 'tpope/vim-eunuch'
 Plug 'rking/ag.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --omnisharp-completer'}
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --omnisharp-completer'}
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-completion-manager'
+if !has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'roxma/ncm-flow'
+Plug 'roxma/ncm-elm-oracle'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'raichoo/haskell-vim', {'for': 'haskell'}
 " Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
@@ -22,8 +36,10 @@ Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 "
 Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 
-Plug 'raichoo/purescript-vim', {'for': 'purescript'}
-Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}
+Plug 'raichoo/purescript-vim'
+Plug 'frigoeu/psc-ide-vim'
+
+Plug 'elmcast/elm-vim'
 
 " Plug 'facebook/reason', {'rpt': 'editorSupport/VimReason/'}
 
@@ -38,6 +54,7 @@ Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}
 " Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
 Plug 'flowtype/vim-flow', {'for': 'javascript'}
 
@@ -52,8 +69,9 @@ syntax enable
 filetype plugin indent on
 
 colo hickop
+" colo angr
 
-" set termguicolors
+set termguicolors
 " set nolazyredraw
 " set noshowcmd
 " set timeoutlen=300
@@ -136,27 +154,27 @@ let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
 
 
-" Syntastic:
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['python', 'javascript'],
-                           \ 'passive_filetypes': [] }
+" " Syntastic:
+" let g:syntastic_mode_map = { 'mode': 'active',
+"                            \ 'active_filetypes': ['python', 'javascript'],
+"                            \ 'passive_filetypes': [] }
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_echo_current_error = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_python_checkers = ["pyflakes"]
-let g:syntastic_javascript_checkers = ['npm -s run lint']
-map <Leader>syc :SyntasticCheck<CR>
-map <Leader>syr :SyntasticReset<CR>
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_echo_current_error = 1
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_enable_balloons = 1
+" let g:syntastic_enable_highlighting = 1
+" let g:syntastic_python_checkers = ["pyflakes"]
+" let g:syntastic_javascript_checkers = ['npm -s run lint']
+" map <Leader>syc :SyntasticCheck<CR>
+" map <Leader>syr :SyntasticReset<CR>
 
 
 " EditorConfig:
@@ -214,3 +232,16 @@ let g:purescript_indent_case = 2
 "   execute "set rtp+=".s:reason
 "   let g:syntastic_reason_checkers=['merlin']
 " endif
+
+
+" Airline:
+let g:airline_theme = 'base16_chalk'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+
+
+" Deoplete:
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
