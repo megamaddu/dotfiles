@@ -22,3 +22,5 @@ if [ -f $DIR/.env.private ]; then
   source $DIR/.env.private
 fi
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
