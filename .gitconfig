@@ -8,7 +8,7 @@
 	ff = only
   tool = vimdiff
 [push]
-	default = simple
+	default = current
 [core]
 	autocrlf = input
   editor = /usr/local/bin/vim
