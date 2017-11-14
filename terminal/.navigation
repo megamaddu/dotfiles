@@ -16,4 +16,26 @@ bs() {
   echo "b ${1} will jump to `pwd`"
 }
 
+
+# replaces segments of the current working directory
+# and jumps to the new path
+s() { 
+  local cd="$PWD";
+  if [ "$1" = "--complete" ]; then
+      awk -v q="${2/s /}" -v p="$PWD" '
+  BEGIN {
+  split(p,a,"/")
+  for( i in a ) if( a[i] && tolower(a[i]) ~ tolower(q) ) print a[i]
+  }
+  ';
+  else
+      while [ $1 ]; do
+          cd="$(echo $cd | sed "s/$1/$2/")";
+          shift;
+          shift;
+      done;
+      cd $cd;
+  fi
+}
+
 # vi:ft=sh
